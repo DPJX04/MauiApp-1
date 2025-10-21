@@ -1,36 +1,215 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.MainPage">
+             x:Class="MauiApp1.MainPage"
+             BackgroundColor="White">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Image
-                Source="E:\Document\Degree\Y3S1\Mobile App\Lab\1\MauiApp1\MauiApp1\Resources\Images\1.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+          ColumnDefinitions="*,*"
+          Padding="0"
+          RowSpacing="0"
+          ColumnSpacing="0">
 
-            <Label
-                Text="Darren Phang"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+        <!-- Status Bar -->
+        <Grid Grid.Row="0" 
+              Grid.ColumnSpan="2"
+              BackgroundColor="#4B0082"
+              HeightRequest="40"
+              Padding="10,0">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Column="0"
+                   Text="8:12"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   FontSize="14"/>
+            
+            <HorizontalStackLayout Grid.Column="1" 
+                                   Spacing="5"
+                                   VerticalOptions="Center">
+                <Label Text="📶" TextColor="White" FontSize="14"/>
+                <Label Text="🔋" TextColor="White" FontSize="14"/>
+            </HorizontalStackLayout>
+        </Grid>
 
-            <Label
-                Text="Welcome to UTS, I like Mobile app"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level6"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+        <!-- Name and ID Field -->
+        <Border Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Background="White"
+                StrokeThickness="0"
+                Padding="20,15">
+            <Label Text="Darren Phang Jun Xuan BCS23090038"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="16"
+                   TextColor="#333333"/>
+        </Border>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
-        </VerticalStackLayout>
-    </ScrollView>
+        <!-- Pet Image Section -->
+        <Image Grid.Row="2"
+               Grid.ColumnSpan="2"
+               Source="E:\Document\Degree\Y3S1\Mobile App\Lab\1\MauiApp1\MauiApp1\Resources\Images\image3.jpg"
+               Aspect="AspectFill"
+               HeightRequest="200"/>
+
+        <!-- Pet Information Section -->
+        <Grid Grid.Row="3"
+              Grid.ColumnSpan="2"
+              BackgroundColor="#FFF8DC"
+              Padding="20,15">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Pet Name and Gender -->
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Text="Robin Hood"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#333333"/>
+            
+            <Image Grid.Row="0"
+                   Grid.Column="1"
+                   Source="symbolmale.png"
+                   HeightRequest="20"
+                   WidthRequest="20"/>
+            
+            <!-- Pet Type -->
+            <Label Grid.Row="1"
+                   Grid.Column="0"
+                   Text="Pug"
+                   FontSize="16"
+                   TextColor="#666666"
+                   Margin="0,5,0,0"/>
+            
+            <!-- Pet Age -->
+            <HorizontalStackLayout Grid.Row="1"
+                                  Grid.Column="1"
+                                  Spacing="5"
+                                  VerticalOptions="Center">
+                <Image Source="clock.png" HeightRequest="20" WidthRequest="20"/>
+                <Label Text="1 year old" FontSize="14" TextColor="#666666"/>
+            </HorizontalStackLayout>
+            
+            <!-- Pet Location -->
+            <HorizontalStackLayout Grid.Row="2"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="2"
+                      Spacing="5"
+                      Margin="0,10,0,0">
+                <Image Source="location.png" HeightRequest="14" WidthRequest="14"/>
+
+                <Grid ColumnDefinitions="*, *">
+                    <Label Text="10 Lorong 8A, Taman Rantau Panjang, 94300 Sibu, Sarawak" 
+               FontSize="14" 
+               TextColor="#666666"
+               LineBreakMode="WordWrap"
+               Grid.Column="1"/>
+                </Grid>
+            </HorizontalStackLayout>
+        </Grid>
+
+        <!-- Owner Profile Section -->
+        <Grid Grid.Row="4"
+              Grid.ColumnSpan="2"
+              Padding="20,15">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Owner Image -->
+            <Border Grid.Column="0"
+                    HeightRequest="40"
+                    WidthRequest="40"
+                    StrokeThickness="0"
+                    Padding="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20"/>
+                </Border.StrokeShape>
+                <Image Source="owner1.jpeg"
+                       Aspect="AspectFill"/>
+            </Border>
+            
+            <!-- Owner Name -->
+            <Label Grid.Column="1"
+                   Text="Alan Choi"
+                   VerticalOptions="Center"
+                   Margin="10,0,0,0"
+                   FontSize="16"
+                   TextColor="Black"/>
+            
+            <!-- Date -->
+            <Label Grid.Column="2"
+                   Text="21.10.2025"
+                   VerticalOptions="Center"
+                   HorizontalOptions="End"
+                   FontSize="14"
+                   TextColor="#666666"/>
+        </Grid>
+
+        <!-- Pet Description -->
+        <Label Grid.Row="5"
+               Grid.ColumnSpan="2"
+               Text="Hi! Robin the Pug is simply a tiny tornado of fur, wrinkles, and endless charm!"
+               Padding="20,10"
+               FontSize="16"
+               TextColor="#333333"
+               LineBreakMode="WordWrap"/>
+
+        <!-- Action Buttons -->
+        <Grid Grid.Row="6"
+              Grid.ColumnSpan="2"
+              Padding="20,10,20,20">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Favorite Button -->
+            <Button Grid.Column="0"
+                    Text="♡"
+                    FontSize="15"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    BackgroundColor="White"
+                    BorderColor="#DDDDDD"
+                    BorderWidth="1"
+                    TextColor="#333333"
+                    Margin="0,0,10,0"/>
+            
+            <!-- Adoption Button -->
+            <Button Grid.Column="1"
+                    Text="Adoption"
+                    FontSize="16"
+                    BackgroundColor="#FFC107"
+                    TextColor="#333333"
+                    CornerRadius="25"/>
+        </Grid>
+
+        <!-- Bottom Navigation Bar -->
+         <BoxView Grid.Row="7"
+                  Grid.ColumnSpan="2"
+                  HeightRequest="30"
+                  BackgroundColor="Black"/>
+    </Grid>
 
 </ContentPage>
+
